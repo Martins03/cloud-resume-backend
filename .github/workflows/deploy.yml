@@ -25,6 +25,8 @@ jobs:
           pip install pytest moto boto3
 
       - name: Run Unit Tests
+        env:
+          AWS_DEFAULT_REGION: us-east-3
         run: pytest
 
       - name: Setup SAM
