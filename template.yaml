@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  VisitorCounterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: hello_world/ # Pasta onde está o teu app.py
+      Handler: app.handler  # Mapeamento: ficheiro.funcao
+      Runtime: python3.13
+      Policies:
+        - DynamoDBCrudPolicy: # Atalho do SAM para dar permissão total à tabela
+            TableName: !Ref VisitorCounterTable
+      Events:
+        GetCount:
+          Type: HttpApi
+          Properties:
+            Path: /get-count
+            Method: get
+
+  VisitorCounterTable:
+    Type: AWS::Serverless::SimpleTable # Cria a tabela DynamoDB automaticamente
+    Properties:
+      PrimaryKey:
+        Name: id
+        Type: String
+      TableName: VisitorCounter # Força o nome para bater com o teu código Python
