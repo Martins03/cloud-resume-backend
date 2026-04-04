@@ -5,7 +5,7 @@ Resources:
   VisitorCounterFunction:
     Type: AWS::Serverless::Function
     Properties:
-      CodeUri: hello_world/ # Pasta onde está o teu app.py
+      CodeUri: counter_function/ # Pasta onde está o teu app.py
       Handler: app.handler  # Mapeamento: ficheiro.funcao
       Runtime: python3.13
       Policies:
