@@ -1,6 +1,6 @@
 # ☁️ Cloud Resume API (Backend)
 
-Este repositório contém a infraestrutura e a lógica de backend para o meu Cloud Resume Challenge. É uma API serverless desenhada para ser escalável, segura e de baixo custo.
+Este repositório contém a infraestrutura e a lógica de backend para o meu Cloud Resume Challenge. É uma API serverless desenhada para ser escalável, segura e de baixo custo. Este backend serve o frontend disponível em: https://github.com/Martins03/cloud-resume-frontend
 
 🏗️ Arquitetura do Backend
 ![Arquitetura do Projeto](./images/Diagrama-Cloud-Resume.drawio.png)
@@ -13,8 +13,12 @@ A solução utiliza uma arquitetura puramente Serverless:
 
 ## 🔒 Segurança & CI/CD (OIDC)
 Um dos maiores focos deste projeto foi a segurança. 
-- **Zero Static Credentials:** O pipeline de CI/CD via **GitHub Actions** utiliza **OpenID Connect (OIDC)** para autenticação na AWS.
-- **IAM Least Privilege:** A Role de deploy e a Role da Lambda têm permissões restritas apenas aos recursos necessários (S3, DynamoDB, Logs).
+- Zero Static Credentials: O pipeline de CI/CD via **GitHub Actions** utiliza **OpenID Connect (OIDC)** para autenticação na AWS.
+- IAM Least Privilege: A Role de deploy e a Role da Lambda têm permissões restritas apenas aos recursos necessários (S3, DynamoDB, Logs).
+
+## 🧪 Testes
+- Unitários: Escritos com `pytest` e `moto` para simular o DynamoDB.
+- Comando: `python -m pytest tests/unit -v`
 
 ## 🚀 Como fazer o Deploy
 
@@ -32,3 +36,4 @@ sam build --use-container
 
 # Deploy manual (apenas para a primeira vez ou testes)
 sam deploy --guided
+
