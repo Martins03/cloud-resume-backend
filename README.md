@@ -3,10 +3,7 @@
 Este repositório contém a infraestrutura e a lógica de backend para o meu Cloud Resume Challenge. É uma API serverless desenhada para ser escalável, segura e de baixo custo.
 
 🏗️ Arquitetura do Backend
-![Arquitetura do Projeto](./images/Diagrama Cloud-Resume.drawio.png)
-<p align="center">
-  <img src="./images/images/Diagrama Cloud-Resume.drawio.png" alt="Arquitetura do Projeto" width="800">
-</p>
+![Arquitetura do Projeto](./images/Diagrama-Cloud-Resume.drawio.png)
 
 A solução utiliza uma arquitetura puramente Serverless:
 - API Gateway: Ponto de entrada REST para os pedidos do frontend.
