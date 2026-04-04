@@ -4,6 +4,9 @@ Este repositório contém a infraestrutura e a lógica de backend para o meu Clo
 
 🏗️ Arquitetura do Backend
 ![Arquitetura do Projeto](./images/Diagrama Cloud-Resume.drawio.png)
+<p align="center">
+  <img src="./images/images/Diagrama Cloud-Resume.drawio.png" alt="Arquitetura do Projeto" width="800">
+</p>
 
 A solução utiliza uma arquitetura puramente Serverless:
 - API Gateway: Ponto de entrada REST para os pedidos do frontend.
